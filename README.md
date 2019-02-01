@@ -10,6 +10,11 @@
 ## Image Misclassification Resolution
 1. Remove labels with only a single occurance. Sanity check confirmed a majority of the mislabeled data was from detection of background objects
 2. A way to resolve these issues is by identifying these misrepresentations and then creating correctly labeled samples and to retrain the CNN model to properly identify them. Because I chose to use a model that I can not fine tune it would mean I would need to go and recreate a model that could learn from these samples. Due to time constraints it was not possible. 
+3. Things that were removed as abstract or too detailed
+
+  Granular Human Characteristics such as head, hair, beard, blonde 
+  Obvious incorrect mislabelings such as galaxy, interstellar
+  The word "Rug" occured frequently and had a high confidence rating outperforming actual apparel
 
 ## Example of Good Image Detection
 1. Antelope example [4381ac7b5ef0e30f3dd12b7177661fd2] [c5ea12106d62809f7baa57ba551652cb]
