@@ -12,7 +12,7 @@
 2. A way to resolve these issues is by identifying these misrepresentations and then creating correctly labeled samples and to retrain the CNN model to properly identify them. Because I chose to use a model that I can not fine tune it would mean I would need to go and recreate a model that could learn from these samples. Due to time constraints it was not possible. 
 3. Things that were removed as abstract or too detailed
 
-  Granular Human Characteristics such as head, hair, beard, blonde 
+  Granular Human Characteristics such as head, hair, beard, blonde, Tattoo
   Obvious incorrect mislabelings such as galaxy, interstellar
   The word "Rug" occured frequently and had a high confidence rating outperforming actual apparel
 
