@@ -5,7 +5,7 @@
 ## Introduction
 
 ### #IKnowNothing
-Given a set of unlabeled images, I set out to create an ontology based on the classification hierarchy from learned image labels. I wanted to make this as visual as possible to represent the interrelationships of all the nodes. Using AWS Rekognition, Anaconda, and Neo4j Desktop I was able to create a visual and queryable representation structure of this data set. 
+Given a set of unlabeled images, I set out to create an ontology based on the classification hierarchy from learned image labels. I wanted to make this as visual as possible in order to effectively portray the interrelationships of the image nodes. Using AWS Rekognition, Anaconda, and Neo4j Desktop I was able to create a visual and queryable representation structure of the resonance data set. 
 
 
 ## Table of Contents
@@ -119,4 +119,6 @@ In order to visualize the relationship between the nodes in the database I’ve 
 ![alt text](/images/multiple_superdomain_graph.PNG)
 
 #### Programmatic View of Data
+
+
 ##### Querying the Database
