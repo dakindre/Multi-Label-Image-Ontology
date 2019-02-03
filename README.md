@@ -22,8 +22,8 @@ Given a set of unlabeled images, I set out to create an ontology based on the cl
                * 3.1.2.2. Understanding the Classification Logic
      * 3.2. Inferring the Classification Structure from Logic
           * 3.2.1. Elimination of Noise
+          * 3.2.2.1. Super-domain and Sub-domain
           * 3.2.2. Creating a classification structure template
-               * 3.2.2.1. Super-domain and Sub-domain
           * 3.2.3. Programmatic Interpretation of Classification
      * 3.3. Ontological Interpretation of Data
           * 3.3.1. Understand the Relationship of RDF and LPG
@@ -79,19 +79,28 @@ In order to create logical order of the image labels I displayed all detected la
 #### Elimination of Noise
 In order to achieve the above it was obvious that noise labels must be removed to make this a manageable task. Occurrences of 1 that had no relevance to the assumed fashion domain were removed. Many of these were background objects e.g. zebra stripes on asphalt. Additionally, redundant labels such as “Human” and “Person” with the same occurrence counts were reduce to one label. This logic reduced the result set by nearly half. 
 
+##### Super-domain and Sub-domain
+
+The reordering and grouping resulted in 12 super-domains and up to 7 sub-domains. Within the subdomains there were restrictions as well. Below is an example of that. 
+
+```
+E.g. Apparel->Female->Clothing->Dress->Miniskirt
+```
+All the items belong to the super-domain of 1 (Apparel). We realize though that Miniskirt should not be categorized under Dress however.
+By establishing domain restrictions such that Miniskirt can only belong to Skirt we eliminate pairings such as these. The following would be the result
+
+```
+Apparel->Femal->Clothing->Dress
+```
+
+
 #### Creating a classification structure template
 The final classification model can be seen [here](/data_files/class_hierarchy.csv)
 
 The programmatic friendly version of that [here](/data_files/classes.csv)
+Below is an subsection example from the file. You can see the logical progression of domain and subdomain represented left to right
 
 ![alt text](/images/class_hierarchy.PNG) 
-
-
-##### Super-domain and Sub-domain
-
-The reordering and grouping resulted in 12 super-domains and up to 7 sub-domains.
-In the super-domain Apparel [1466] for example, logical connections were made between labels e.g. Skirt->Miniskirt. A miniskirt must belong to its superclass of Skirt.  Below is an example of what would happen if this were not the case
-[show example here]
 
 #### Programmatic Interpretation of Classification
 In order to implement this logic programmatically I used python pandas dataframes to transform the data into a logical structure. The script can be seen here with the explanations of each step outlined. 
