@@ -1,6 +1,6 @@
 # Multi-Label Image Classification and Graphical Database Ontology
 
-![alt text](/Images/AWS_Data_Flow.png)
+![alt text](/images/resonance.png)
 
 ## Introduction
 
