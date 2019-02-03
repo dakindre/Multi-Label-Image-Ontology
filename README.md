@@ -39,15 +39,17 @@ Given a set of unlabeled images, I set out to create an ontology based on the cl
 
 ## Technologies Used
 ### Final Production
+```
 Anaconda Python – Jupyter Notebook/AWS CLI
 AWS Rekognition – Image Classification
 Neo4j – Graph Database
-
+```
 ### Development
+```
 Protégé – Ontology Editor
 Jena – Ontology Editor
 Keras/Tensorflow: Dataflow programming software
-
+```
 
 ## Procedures and Justifications
 ### Image Detection
