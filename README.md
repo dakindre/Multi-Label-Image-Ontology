@@ -4,30 +4,30 @@
 Given a set of unlabeled images, create an ontological representation of classification hierarchy
 
 ## Table of Contents 
-1.	Introduction
+1. Introduction
 2.	Technologies Used
-2.1.	Final Production
-2.2.	Development
+       2.1.	Final Production
+      2.2.	Development
 3.	Procedures and Justifications
-3.1.	Image Detection
-3.1.1.	 Limitations of Zalando’s and Other Open Source Computer Vision Models
-3.1.2.	 Rekognition Model
-3.1.2.1.	Misclassification of objects
-3.1.2.2.	Understanding the Classification Logic
-3.2.	Inferring the Classification Structure from Logic
-3.2.1.	 Elimination of Noise
-3.2.2.	Creating a classification structure template
-3.2.2.1.	Super-domain and Sub-domain
-3.2.3.	Programmatic Interpretation of Classification
-3.3.	Ontological Interpretation of Data
-3.3.1.	 Understand the Relationship of RDF and LPG
-3.3.2.	 Importing Data into LPG
-3.3.3.	 Graphical View of Data
-3.3.4.	 Programmatic View of Data
-3.3.4.1.	Querying the Database
+      3.1.	Image Detection
+            3.1.1.	 Limitations of Zalando’s and Other Open Source Computer Vision Models
+            3.1.2.	 Rekognition Model
+                  3.1.2.1.	Misclassification of objects
+                  3.1.2.2.	Understanding the Classification Logic
+      3.2.	Inferring the Classification Structure from Logic
+            3.2.1.	 Elimination of Noise
+            3.2.2.	Creating a classification structure template
+                  3.2.2.1.	Super-domain and Sub-domain
+            3.2.3.	Programmatic Interpretation of Classification
+      3.3.	Ontological Interpretation of Data
+            3.3.1.	 Understand the Relationship of RDF and LPG
+            3.3.2.	 Importing Data into LPG
+            3.3.3.	 Graphical View of Data
+            3.3.4.	 Programmatic View of Data
+            3.3.4.1.	Querying the Database
 4.	Reproduce 
-4.1.	File Explanation
-4.2.	Procedure
+      4.1.	File Explanation
+      4.2.	Procedure
 
 ## Introduction
 Enter something here
