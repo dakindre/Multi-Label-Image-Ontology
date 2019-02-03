@@ -1,0 +1,118 @@
+//LOAD IMAGE FILE
+CREATE CONSTRAINT ON (c:Image) ASSERT c.image_url IS UNIQUE;
+
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM 
+'file:///Image_Iteration.csv'AS line 
+WITH line
+
+CREATE (image:Image {image_url: line.Image})
+;
+
+
+CREATE CONSTRAINT ON (o:Object) ASSERT o.name IS UNIQUE;
+
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM 
+'file:///Object_Iteration.csv'AS line 
+
+MATCH (image:Image {image_url: line.Image})
+MERGE (object:Object {name: line.Object})
+
+CREATE (image)-[:HAS]->(object)
+;
+
+
+CREATE CONSTRAINT ON (o1:Object1) ASSERT o1.name IS UNIQUE;
+
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM 
+'file:///Object1_Iteration.csv'AS line 
+
+MATCH (image:Image {image_url: line.Image})
+MATCH (image)-[:HAS]->(object)
+
+MERGE (object1:Object1 {name: line.Object1})
+
+MERGE (image)-[:HAS]->(object1)
+MERGE (object1)-[:IN_CATEGORY]->(object)
+;
+
+CREATE CONSTRAINT ON (o2:Object2) ASSERT o2.name IS UNIQUE;
+
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM 
+'file:///Object2_Iteration.csv'AS line 
+
+MATCH (image:Image {image_url: line.Image})
+MATCH (image)-[:HAS]->(object1)
+
+MERGE (object2:Object2 {name: line.Object2})
+
+MERGE (image)-[:HAS]->(object2)
+MERGE (object2)-[:IN_CATEGORY]->(object1)
+;
+
+CREATE CONSTRAINT ON (o3:Object3) ASSERT o3.name IS UNIQUE;
+
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM 
+'file:///Object3_Iteration.csv'AS line 
+
+MATCH (image:Image {image_url: line.Image})
+MATCH (image)-[:HAS]->(object2)
+
+MERGE (object3:Object3 {name: line.Object3})
+
+MERGE (image)-[:HAS]->(object3)
+MERGE (object3)-[:IN_CATEGORY]->(object2)
+;
+
+
+
+
+CREATE CONSTRAINT ON (o4:Object4) ASSERT o4.name IS UNIQUE;
+
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM 
+'file:///Object4_Iteration.csv'AS line 
+
+MATCH (image:Image {image_url: line.Image})
+MATCH (image)-[:HAS]->(object3)
+
+MERGE (object4:Object4 {name: line.Object4})
+
+MERGE (image)-[:HAS]->(object4)
+MERGE (object4)-[:IN_CATEGORY]->(object3)
+;
+
+
+CREATE CONSTRAINT ON (o5:Object5) ASSERT o5.name IS UNIQUE;
+
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM 
+'file:///Object5_Iteration.csv'AS line 
+
+MATCH (image:Image {image_url: line.Image})
+MATCH (image)-[:HAS]->(object4)
+
+MERGE (object5:Object5 {name: line.Object5})
+
+MERGE (image)-[:HAS]->(object5)
+MERGE (object5)-[:IN_CATEGORY]->(object4)
+;
+
+CREATE CONSTRAINT ON (o6:Object6) ASSERT o6.name IS UNIQUE;
+
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM 
+'file:///Object6_Iteration.csv'AS line 
+
+MATCH (image:Image {image_url: line.Image})
+MATCH (image)-[:HAS]->(object5)
+
+MERGE (object6:Object6 {name: line.Object6})
+
+MERGE (image)-[:HAS]->(object6)
+MERGE (object6)-[:IN_CATEGORY]->(object5)
+;
