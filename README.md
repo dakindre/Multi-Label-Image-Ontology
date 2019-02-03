@@ -6,11 +6,8 @@ Given a set of unlabeled images, create an ontological representation of classif
 ## Table of Contents 
 1. Introduction
 2.	Technologies Used
-
       2.1.	Final Production
-      
       2.2.	Development
-      
 3.	Procedures and Justifications
       3.1.	Image Detection
             3.1.1.	 Limitations of Zalando’s and Other Open Source Computer Vision Models
