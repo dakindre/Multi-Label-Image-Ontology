@@ -59,7 +59,7 @@ In order to classify the images into an ontology a computer vision model must fi
 I initially thought to use a dataset created for identifying e-commerce. Ideally the dataset would have a diverse sampling of fashion items. For this I used Zalando’s FMNIST dataset which provided a set of 60,000 images and 10 category labels. This model had poor performance when used against the Resonance Image Set and was too simplistic.
 
 #### Rekognition Model
-Amazons Rekognition model provided the comprehensiveness that was needed to identify all objects within the images with a certain degree of accuracy. The software was included under free tier and was assumed to qualify as open source. Using the boto3 API I created a label dataframe locally. The script can be seen [here]
+Amazons Rekognition model provided the comprehensiveness that was needed to identify all objects within the images with a certain degree of accuracy. The software was included under free tier and was assumed to qualify as open source. Using the boto3 API I created a label dataframe locally. The script can be seen [here] (/scripts/Product_Meta_Image_Detection.ipynb)
 
 ##### Misclassification of objects
 1.	Graphics or patterns that contained images such as deer
@@ -68,7 +68,8 @@ Amazons Rekognition model provided the comprehensiveness that was needed to iden
 
 ##### Understanding the Classification Logic
 The model detected both primary domains and subdomains e.g. skirt and miniskirt. However the model did not create any relationship links between items detected. In the example shown below we see 3 objects. The model will not tell you which descriptor belongs to which object. That logic needs to be done in the next step
-[Image Here rekognition_sample1]
+
+![alt text](/images/rekognition_sample1.PNG)
 
 ### Inferring the Classification Structure 
 Initially I wanted to use an NLP model to detect relationships in order to create a class ordering, but could not find one that fit. My next idea was to use a prepopulated ontology that could infer the structure from the labels. This was the original objective but the OWL ontologies I found were not comprehensive enough to achieve this. 
