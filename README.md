@@ -11,9 +11,9 @@ Given a set of unlabeled images, create an ontological representation of classif
 3.	Procedures and Justifications
      * 3.1. Image Detection
           * 3.1.1. Limitations of Zalando’s and Other Open Source Computer Vision Models
-              * 3.1.2. Rekognition Model
-                  3.1.2.1.	Misclassification of objects
-                  3.1.2.2.	Understanding the Classification Logic
+          * 3.1.2. Rekognition Model
+                 * 3.1.2.1. Misclassification of objects
+                 * 3.1.2.2. Understanding the Classification Logic
       3.2.	Inferring the Classification Structure from Logic
             3.2.1.	 Elimination of Noise
             3.2.2.	Creating a classification structure template
