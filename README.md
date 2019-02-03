@@ -3,12 +3,12 @@
 ## Introduction
 
 ### #IKnowNothing
-Given a set of unlabeled images, I set out to create an ontology based on the classification hierarchy from learned image labels. I wanted to make this as visual as possible to represent the interrelationships of all the nodes. Using AWS Rekognition, Anaconda, and Neo4j Desktop I was able to create a visual and queryable representation of this data set. 
+Given a set of unlabeled images, I set out to create an ontology based on the classification hierarchy from learned image labels. I wanted to make this as visual as possible to represent the interrelationships of all the nodes. Using AWS Rekognition, Anaconda, and Neo4j Desktop I was able to create a visual and queryable representation structure of this data set.
 
 
 ## Table of Contents 
-1. Introduction
-2.	Technologies Used
+### 1. Introduction
+### 2. Technologies Used
       * 2.1. Final Production
       * 2.2. Development
 3.	Procedures and Justifications
