@@ -81,7 +81,7 @@ In order to achieve the above it was obvious that noise labels must be removed t
 
 #### Creating a classification structure template
 The final classification model can be seen [here](/data_files/class_hierarchy.csv)
-![alt text](/images/resonance.png)
+![alt text](/images/class_hierarchy.png) ![alt text](/images/class_hierarchy_programmatic.png)
 
 The programmatic friendly version of that [here](/data_files/classes.csv)
 
