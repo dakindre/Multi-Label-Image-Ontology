@@ -115,8 +115,8 @@ I used the script [here](/scripts/importImageLabelsNeo4j.cypher) to import data 
 
 #### Graphical View of Data
 In order to visualize the relationship between the nodes in the database I’ve provided a few examples below. 
-[Example 1]
-[Example 2]
+![alt text](/images/apparel_graph.PNG)
+![alt text](/images/multiple_superdomain_graph.PNG)
 
 #### Programmatic View of Data
 ##### Querying the Database
