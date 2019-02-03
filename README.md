@@ -59,7 +59,7 @@ In order to classify the images into an ontology a computer vision model must fi
 I initially thought to use a dataset created for identifying e-commerce. Ideally the dataset would have a diverse sampling of fashion items. For this I used Zalando’s FMNIST dataset which provided a set of 60,000 images and 10 category labels. This model had poor performance when used against the Resonance Image Set and was too simplistic.
 
 #### Rekognition Model
-Amazons Rekognition model provided the comprehensiveness that was needed to identify all objects within the images with a certain degree of accuracy. The software was included under free tier and was assumed to qualify as open source. Using the boto3 API I created a label dataframe locally. The script can be seen [here] (/scripts/Product_Meta_Image_Detection.ipynb)
+Amazons Rekognition model provided the comprehensiveness that was needed to identify all objects within the images with a certain degree of accuracy. The software was included under free tier and was assumed to qualify as open source. Using the boto3 API I created a label dataframe locally. The script can be seen [here](/scripts/Product_Meta_Image_Detection.ipynb)
 
 ##### Misclassification of objects
 1.	Graphics or patterns that contained images such as deer
@@ -72,14 +72,18 @@ The model detected both primary domains and subdomains e.g. skirt and miniskirt.
 ![alt text](/images/rekognition_sample1.PNG)
 
 ### Inferring the Classification Structure 
-Initially I wanted to use an NLP model to detect relationships in order to create a class ordering, but could not find one that fit. My next idea was to use a prepopulated ontology that could infer the structure from the labels. This was the original objective but the OWL ontologies I found were not comprehensive enough to achieve this. 
-In order to create logical order of the image labels I displayed all detected labels grouped by count [grouped meta]. The grouping provided a general understanding of the hierarchical structure used by Rekognition e.g. Human[711]->Female[446]->Girl[1]
+Initially I wanted to use an NLP model to detect relationships in order to create a class ordering, but could not find one that fit. My next idea was to use a prepopulated ontology that could infer the structure from the labels. Again, there was not one that fit.
+
+In order to create logical order of the image labels I displayed all detected labels grouped by count seen [here](/data_files/grouped_meta.csv). The grouping provided a general understanding of the hierarchical structure used by Rekognition e.g. Human[711]->Female[446]->Girl[1]
 
 #### Elimination of Noise
 In order to achieve the above it was obvious that noise labels must be removed to make this a manageable task. Occurrences of 1 that had no relevance to the assumed fashion domain were removed. Many of these were background objects e.g. zebra stripes on asphalt. Additionally, redundant labels such as “Human” and “Person” with the same occurrence counts were reduce to one label. This logic reduced the result set by nearly half. 
 
 #### Creating a classification structure template
-The final classification model can be seen [here].
+The final classification model can be seen [here](/data_files/class_hierarchy.csv)
+![alt text](/images/resonance.png)
+
+The programmatic friendly version of that [here](/data_files/classes.csv)
 
 
 ##### Super-domain and Sub-domain
