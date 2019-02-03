@@ -84,7 +84,7 @@ In order to achieve the above it was obvious that noise labels must be removed t
 The reordering and grouping resulted in 12 super-domains and up to 7 sub-domains. Within the subdomains there were restrictions as well. Below is an example of that. 
 
 ```
-E.g. Apparel->Female->Clothing->Dress->Miniskirt
+Apparel->Female->Clothing->Dress->Miniskirt
 ```
 All the items belong to the super-domain of 1 (Apparel). We realize though that Miniskirt should not be categorized under Dress however.
 By establishing domain restrictions such that Miniskirt can only belong to Skirt we eliminate pairings such as these. The following would be the result
@@ -96,24 +96,22 @@ Apparel->Femal->Clothing->Dress
 
 #### Creating a classification structure template
 The final classification model can be seen [here](/data_files/class_hierarchy.csv)
-
-The programmatic friendly version of that [here](/data_files/classes.csv)
 Below is an subsection example from the file. You can see the logical progression of domain and subdomain represented left to right
 
 ![alt text](/images/class_hierarchy.PNG) 
 
 #### Programmatic Interpretation of Classification
-In order to implement this logic programmatically I used python pandas dataframes to transform the data into a logical structure. The script can be seen here with the explanations of each step outlined. 
+In order to implement this logic programmatically I used python pandas dataframes to transform the data into a logical structure. The script can be seen [here](/scripts/Product_Meta_Classification.ipynb) with the explanations of each step commented. 
 
  
 ### Ontological Interpretation of Data
-At this point I had the data set I wanted in CSV format ready to import into an ontology. Initially I used Protégé to import my structure via CSV load. This approach worked to a degree and I was able to output the data into RDF/XML format, however it did not satisfy my representation of the data and had serious limitations based on my dataset. Protégé and most ontology software I tried seemed antiquated and not scalable. I chose to use a similar and more pragmatic approach with a Neo4j graph database. This can easily be deployed in the cloud and run to power recommender systems. 
+At this point I had the data set I wanted in CSV format ready to import into an ontology. Initially I used Protégé to import my structure via CSV load. This approach worked to a degree and I was able to output the data into RDF/XML format, however it did not satisfy my representation of the data and had serious limitations based on my dataset. Protégé and most ontology software I tried seemed antiquated and not scalable. I chose to use a similar and more pragmatic approach with a Neo4j graph database. This can easily be deployed in the cloud and run to power recommendation systems. It was the clear winner for this implementation.
 
 #### Understand the Relationship of RDF and LPG
 There is a good article out there about the difference between the two approaches you can read here[https://neo4j.com/blog/rdf-triple-store-vs-labeled-property-graph-difference/]. Ontologies can be imported into Neo4j and represented with LPG. Because of that I chose to bypass explicitly creating my dataset in RDF or OWL and instead use LPG directly. 
 
 #### Importing Data into LPG
-I used the script [here] to import data from my csv files into the graph database. Because of the way the data was structured and the frequent occurrence of null values there was a bit of a hack in order to maintain clarity and logical relationships within the database. I’d like to give a shout out to Nicole White for her super informative video[https://vimeo.com/112447027] on how to accomplish this.
+I used the script [here](/scripts/importImageLabelsNeo4j.cypher) to import data from my csv files into the graph database. Because of the way the data was structured and the frequent occurrence of null values there was a bit of a hack in order to maintain clarity and logical relationships within the database. I’d like to give a shout out to Nicole White for her super informative [video](https://vimeo.com/112447027) on how to accomplish this.
 
 #### Graphical View of Data
 In order to visualize the relationship between the nodes in the database I’ve provided a few examples below. 
