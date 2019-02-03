@@ -1,4 +1,4 @@
-# Multi-Label Image Classification and Graphical Database Ontology
+# Multi-Label Image Classification and Graphical Ontology
 
 ![alt text](/images/resonance.png)
 
