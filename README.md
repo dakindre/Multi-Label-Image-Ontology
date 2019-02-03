@@ -1,7 +1,10 @@
 # Multilabel Image Classification and Graphical Database Ontology
 
-## Understood Objective
-Given a set of unlabeled images, create an ontological representation of classification hierarchy
+## Introduction
+
+Given a set of unlabeled images, I set out to create an ontology based on the classification hierarchy from learned image labels. I wanted to make this as visual as possible to represent the interrelationships of all the nodes. Using AWS Rekognition, Anaconda, and Neo4j Desktop I was able to create a visual and queryable representation of this data set. 
+
+#IKnowNothing
 
 ## Table of Contents 
 1. Introduction
@@ -26,11 +29,10 @@ Given a set of unlabeled images, create an ontological representation of classif
           * 3.3.4. Programmatic View of Data
                * 3.3.4.1. Querying the Database
 4.	Reproduce 
-      4.1.	File Explanation
-      4.2.	Procedure
+     * 4.1. File Explanation
+     * 4.2. Procedure
 
-## Introduction
-Enter something here
+
 
 ## Technologies Used
 ### Final Production
