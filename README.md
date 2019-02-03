@@ -1,7 +1,7 @@
 # Multilabel Image Classification and Graphical Database Ontology
 
 ## Understood Objective
-Given a set of unlabeled images, create an ontological representation of image classification hierarchy
+Given a set of unlabeled images, create an ontological representation of classification hierarchy
 
 ## Table of Contents 
 1.	Introduction
