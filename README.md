@@ -1,4 +1,4 @@
-# Multilabel Image Classification and Graphical Database Ontology
+# Multi-Label Image Classification and Graphical Database Ontology
 
 ![alt text](/Images/AWS_Data_Flow.png)
 
