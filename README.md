@@ -109,7 +109,7 @@ At this point I had the data set I wanted in CSV format ready to import into an 
 There is a good article out there about the difference between the two approaches you can read [here](https://neo4j.com/blog/rdf-triple-store-vs-labeled-property-graph-difference/). Ontologies can be imported into Neo4j and represented with LPG. Because of that I chose to bypass explicitly creating my dataset in RDF or OWL and instead use LPG directly. 
 
 #### Importing Data into LPG
-I used the script [here](/scripts/importImageLabelsNeo4j.cypher) to import data from my csv files into the graph database. Because of the way the data was structured and the frequent occurrence of null values there was a bit of a hack in order to maintain clarity and logical relationships within the database. I’d like to give a shout out to Nicole White for her super informative [video](https://vimeo.com/112447027) on how to accomplish this.
+I used the script [here](/scripts/importImageLabelsNeo4j.cypher.txt) to import data from my csv files into the graph database. Because of the way the data was structured and the frequent occurrence of null values there was a bit of a hack in order to maintain clarity and logical relationships within the database. I’d like to give a shout out to Nicole White for her super informative [video](https://vimeo.com/112447027) on how to accomplish this.
 
 #### Graphical View of Data
 In order to visualize the relationship between the nodes in the database I’ve provided a few examples below. You can see the interconnections between the different data nodes. There is the relative path to the image as an ID. If you want to check to see the specific picture simply search using that ID in your local folder where the images are stored. 
