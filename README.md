@@ -7,7 +7,7 @@
 ### #IKnowNothing
 Given a set of unlabeled images, I set out to create an ontology based on the classification hierarchy from learned image labels. I wanted to make this as visual as possible in order to effectively portray the interrelationships of the image nodes. Using AWS Rekognition, Anaconda, and Neo4j Desktop I was able to create a visual and queryable representation structure of the resonance data set. 
 
-If you wish to just look at the ontology file with the image paths and their classification you can open the result [here](/data_files/product_final.csv). You would need to append the full path prefix to the front to hyperlink out to the actual image if you were to download it. 
+If you wish to just look at the ontology file with the image paths and their classification you can open the result [here](/data_files/product_final.csv). You would need to append the full path prefix to the front to hyperlink out to the actual image if you were to download it. Please continue on though. There is much more to come!
 
 ![alt_text](/images/ontology_raw.PNG)
 
@@ -106,7 +106,9 @@ In order to implement this logic programmatically I used python pandas dataframe
 
  
 ### Ontological Interpretation of Data
-At this point I had the data set I wanted in CSV format ready to import into an ontology. Initially I used Protégé to import my structure via CSV load. This approach worked to a degree and I was able to output the data into RDF/XML format, however it did not satisfy my representation of the data and had serious limitations based on my dataset. Protégé and most ontology software I tried seemed antiquated and not scalable. I chose to use a similar and more pragmatic approach with a Neo4j graph database. This can easily be deployed in the cloud and run to power recommendation systems. It was the clear winner for this implementation.
+At this point I had the data set I wanted in CSV format ready to import into an ontology. Initially I used Protégé to import my structure via CSV load. This approach worked to a degree and I was able to output the data into RDF/XML format, however it did not satisfy my representation of the data and had serious limitations based on my dataset. Protégé and most ontology software I tried seemed antiquated and not scalable. I chose to use a similar and more pragmatic approach with a Neo4j graph database. This can easily be deployed in the cloud and run to power recommendation systems. It was the clear winner for this implementation. The below graph shows how each image node and it's labels are represented in the graph database. 
+
+![alt text](/images/ImageNodeLabelRelationalDiagram.PNG) 
 
 #### Understand the Relationship of RDF and LPG
 There is a good article out there about the difference between the two approaches you can read [here](https://neo4j.com/blog/rdf-triple-store-vs-labeled-property-graph-difference/). Ontologies can be imported into Neo4j and represented with LPG. Because of that I chose to bypass explicitly creating my dataset in RDF or OWL and instead use LPG directly. 
