@@ -29,8 +29,6 @@ Given a set of unlabeled images, I set out to create an ontology based on the cl
           * 3.3.1. Understand the Relationship of RDF and LPG
           * 3.3.2. Importing Data into LPG
           * 3.3.3. Graphical View of Data
-          * 3.3.4. Programmatic View of Data
-               * 3.3.4.1. Querying the Database
 4.	Reproduce 
      * 4.1. File Explanation
      * 4.2. Procedure
@@ -114,11 +112,24 @@ There is a good article out there about the difference between the two approache
 I used the script [here](/scripts/importImageLabelsNeo4j.cypher) to import data from my csv files into the graph database. Because of the way the data was structured and the frequent occurrence of null values there was a bit of a hack in order to maintain clarity and logical relationships within the database. I’d like to give a shout out to Nicole White for her super informative [video](https://vimeo.com/112447027) on how to accomplish this.
 
 #### Graphical View of Data
-In order to visualize the relationship between the nodes in the database I’ve provided a few examples below. 
+In order to visualize the relationship between the nodes in the database I’ve provided a few examples below. You can see the interconnections between the different data nodes. There is the relative path to the image as an ID. If you want to check to see the specific picture simply search using that ID in your local folder where the images are stored. 
+
+The data can be queried to find specific nodes or groupings. You could use this for recommender systems when you want to show similar products. Neo4j uses the cypher query language. 
+
 ![alt text](/images/apparel_graph.PNG)
 ![alt text](/images/multiple_superdomain_graph.PNG)
 
-#### Programmatic View of Data
+### Reproduce 
+The following instructions will help you to load the ontology CSV into Neo4j
 
+### File Explanation
 
-##### Querying the Database
+There are 7 data files and one script file to help import the ontology into Neo4j. Each data file reflects the different level of the hierarchy. Because of null importing it needed to be done in this way. The data files for import can be found [here](/data_files/neo4j_imports/) and the script to import it into Neo4j can be found [here](/scripts/importImageLabelsNeo4j.cypher.txt)
+
+### Procedure
+In order to do this follow the instructions below
+
+1. Install the necessary files from above onto your local computer
+2. Install Neo4j [here](https://neo4j.com/download/)
+3. Open the terminal within Neo4j and run the scripts in sections
+4. Open Neo4j Browser and you can visualize or query the data as you wish
