@@ -5,7 +5,7 @@
 ## Introduction
 
 ### #IKnowNothing
-Given a set of unlabeled images, I set out to create an ontology based on the classification hierarchy from learned image labels. I wanted to make this as visual as possible in order to effectively portray the interrelationships of the image nodes. Using AWS Rekognition, Anaconda, and Neo4j Desktop I was able to create a visual and queryable representation structure of the resonance data set. 
+Given a set of unlabeled images, I set out to create an ontology based on the classification hierarchy from learned object labels. I wanted to make this as visual as possible in order to effectively portray the interrelationships of the image nodes. Using AWS Rekognition, Anaconda, and Neo4j Desktop I was able to create a visual and queryable representation structure of the resonance data set. 
 
 If you wish to just look at the ontology file with the image paths and their classification you can open the result [here](/data_files/product_final.csv). You would need to append the full path prefix to the front to hyperlink out to the actual image if you were to download it. Please continue on though. There is much more to come!
 
